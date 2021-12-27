@@ -1,0 +1,23 @@
+<section id="informations" class="informations" [ngClass]="{'editMode': editMode}">
+    <mat-progress-bar *ngIf="isLoadding" mode="indeterminate"></mat-progress-bar>
+    <div class="container">
+      <div class="search">
+        <div class="input-field col s6">
+          <input id="first_name2" type="text" class="validate" [(ngModel)]="username">
+          <label class="active" for="first_name2">Type your username of github</label>
+          <button (click)="search()" class="waves-effect waves-light btn">search</button>
+        </div>
+      </div>
+      <div class="content-central">
+        <div class="content-left">
+          <h1>{{user.name}}</h1>
+          <img src="{{user.avatar_url}}" alt="Sem imagem">
+        </div>
+        <div class="content-right">
+            <h1>{{user.bio}}</h1>
+            <p>{{user.location}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  

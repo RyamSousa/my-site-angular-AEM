@@ -1,0 +1,15 @@
+<section id="portfolio" class="portfolio" [ngClass]="{'editMode': editMode}">
+    <h1 class="number-repos">Public repositories: {{repositories.length}}</h1>
+    <div class="container" *ngFor="let item of repositories;">
+      <li class="card" *ngIf="!item.private">
+        <div class="card-container">
+          <h1>{{item.name}}</h1>
+          <p>{{item.description}}</p>
+          <p>Language: {{item.language}}</p>
+          <a href="{{item.svn_url}}" target="_blank">Repository address</a>
+          <span>Created at: {{item.created_at}}</span>
+        </div>
+      </li>
+    </div>
+  </section>
+  

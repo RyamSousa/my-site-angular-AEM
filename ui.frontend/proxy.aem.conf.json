@@ -1,0 +1,12 @@
+[
+    {
+        "context": [
+            "/content/**/*.(jpg|jpeg|svg|png|model.json)",
+            "/etc.clientlibs/**/*",
+            "/bin/**/**"
+        ],
+        "target": "http://localhost:4502",
+        "auth": "admin:admin",
+        "logLevel": "debug"
+    }
+]

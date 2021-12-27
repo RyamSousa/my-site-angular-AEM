@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/siteangular" mode="merge"/>
+    <filter root="/content/siteangular" mode="merge"/>
+    <filter root="/content/dam/siteangular/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/siteangular" mode="merge"/>
+</workspaceFilter>
