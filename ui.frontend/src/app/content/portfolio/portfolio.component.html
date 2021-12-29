@@ -1,4 +1,4 @@
-<section id="portfolio" class="portfolio" [ngClass]="{'editMode': editMode}">
+<section *ngIf="repositories" id="portfolio" class="portfolio" [ngClass]="{'editMode': editMode}">
     <h1 class="number-repos">Public repositories: {{repositories.length}}</h1>
     <div class="container" *ngFor="let item of repositories;">
       <li class="card" *ngIf="!item.private">
