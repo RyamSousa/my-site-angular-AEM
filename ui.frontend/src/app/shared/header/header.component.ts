@@ -1,3 +1,5 @@
+import User from 'src/app/models/user.model';
+import { ServiceUsersService } from 'src/app/services/service-users.service';
 import { Utils } from '@adobe/aem-angular-editable-components';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,15 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  user: User;
   avatarUrl: string;
   htmlUrl: string;
   editMode: boolean;
 
-  constructor() {
+  constructor(private userService: ServiceUsersService) {
     this.editMode = Utils.isInEditor();
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.user = await this.userService.getUser('adobe');
   }
 
 }

@@ -1,4 +1,5 @@
-import { ServiceRepositoriesService } from './../../services/service-repositories.service';
+import { ServiceUsersService } from 'src/app/services/service-users.service';
+import User from 'src/app/models/user.model';
 import { Utils } from '@adobe/aem-angular-editable-components';
 import { Component, OnInit } from '@angular/core';
 import Repository from 'src/app/models/repository.model';
@@ -9,15 +10,20 @@ import Repository from 'src/app/models/repository.model';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
-
   repositories: Repository[];
   editMode: boolean;
 
-  constructor(private respositoriesService: ServiceRepositoriesService) {
+  constructor(private serviceUser: ServiceUsersService) {
     this.editMode = Utils.isInEditor();
   }
 
   async ngOnInit(): Promise<void> {
-    this.repositories = await this.respositoriesService.getRepositories('adobe');
+    await ServiceUsersService.emitEventRepositories.subscribe(
+      login => this.loadRepositories(login)
+    );
+  }
+
+  async loadRepositories(login: string) {
+    this.repositories = await this.serviceUser.getRepositories(login);
   }
 }

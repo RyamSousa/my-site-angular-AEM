@@ -87,7 +87,7 @@ a:hover{
     flex-direction: column;
   }
 }
-/*
+
 .editMode {
     display: block;
     height: 50px;
@@ -97,4 +97,4 @@ a:hover{
   
   .editMode div {
     display: none;
-  }*/
+  }

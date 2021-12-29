@@ -1,9 +1,6 @@
 <section id="about" class="about" [ngClass]="{'editMode': editMode}">
     <div class="container">
-      <div class="description">
-        <p>
-          {{text}}
-        </p>
+      <div class="description" [innerHtml]="text">
       </div>
     </div>
   </section>

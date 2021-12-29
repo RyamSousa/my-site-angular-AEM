@@ -15,20 +15,21 @@ export class InformationsComponent implements OnInit {
   editMode: boolean;
   isLoadding: boolean;
 
-  constructor(private userService: ServiceUsersService) {
+  constructor(private serviceUser: ServiceUsersService) {
     this.editMode = Utils.isInEditor();
     this.isLoadding = false;
   }
 
   async ngOnInit(): Promise<void> {
-    this.user = await this.userService.getUser('adobe');
+    this.user = await this.serviceUser.getUser('adobe');
+    ServiceUsersService.emitEventRepositories.emit(this.user.login);
   }
 
 
   async search() {
     this.isLoadding = true;
-    this.user = await this.userService.getUser(this.username);
-    this.username = this.user.html_url;
+    this.user = await this.serviceUser.getUser(this.username);
+    ServiceUsersService.emitEventRepositories.emit(this.user.login);
     this.isLoadding = false;
   }
 }

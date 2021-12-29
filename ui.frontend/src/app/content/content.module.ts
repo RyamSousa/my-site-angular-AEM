@@ -1,3 +1,4 @@
+import { ServiceUsersService } from 'src/app/services/service-users.service';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { PortfolioComponent } from './portfolio/portfolio.component';
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     InformationsComponent,
     PortfolioComponent
-  ]
+  ],
+  providers: [ ServiceUsersService]
 })
 export class ContentModule { }
