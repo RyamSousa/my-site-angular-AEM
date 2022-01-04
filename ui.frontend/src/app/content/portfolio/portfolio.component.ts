@@ -22,7 +22,7 @@ export class PortfolioComponent implements OnInit {
         login => this.loadRepositories(login)
       );
     } catch (error) {
-      alert('Repositórios não encontrados');
+      alert('Nenhum repositório encontrado');
     }
 
   }

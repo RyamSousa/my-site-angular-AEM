@@ -11,16 +11,16 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
                 <items jcr:primaryType="nt:unstructured">
-                    <avatar
+                    <linkedinLink
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="AvatarUrl"
-                        name="./avatarUrl"/>
-                    <url
+                        fieldLabel="Linkedin Link"
+                        name="./linkedinLink"/>		
+                    <instagramLink
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="htmlUrl"
-                        name="./htmlUrl"/>			
+                        fieldLabel="Instagram Link"
+                        name="./instagramLink"/>		
                 </items>
             </column>
         </items>

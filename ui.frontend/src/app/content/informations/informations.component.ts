@@ -21,12 +21,8 @@ export class InformationsComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    try {
       this.user = await this.serviceUser.getUser('adobe');
       ServiceUsersService.emitEventRepositories.emit(this.user.login);
-    } catch (error) {
-      alert('Usuário não encontrado.');
-    }
   }
 
 

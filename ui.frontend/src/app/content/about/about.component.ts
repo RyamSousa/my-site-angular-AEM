@@ -10,11 +10,9 @@ export class AboutComponent implements OnInit {
 
   text: string;
   editMode: boolean;
-  editModeFill: boolean;
 
   constructor() {
     this.editMode = Utils.isInEditor();
-    this.editModeFill = Utils.isInEditor();
   }
 
   ngOnInit(): void {

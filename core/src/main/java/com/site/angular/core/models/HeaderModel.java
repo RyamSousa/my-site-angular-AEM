@@ -25,10 +25,10 @@ public class HeaderModel implements ComponentExporter {
     static final String RESOURCE_TYPE = "siteangular/components/header";
 
     @ValueMapValue
-    private String avatarUrl;
+    private String linkedinLink;
 
     @ValueMapValue
-    private String htmlUrl;
+    private String instagramLink;
 
     @Override
     public String getExportedType() {

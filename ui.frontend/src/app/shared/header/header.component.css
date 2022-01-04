@@ -64,7 +64,10 @@ li{
     padding: 4px;
 }
 
-a:hover{
+.socialMedia a:hover{
+    border-bottom: 3px solid var(--terciary-color);
+}
+.options a:hover{
     border-bottom: 3px solid var(--terciary-color);
 }
 
@@ -89,9 +92,5 @@ a:hover{
 }
 
 .editMode {
-    position: initial;
-    display: block;
-    height: 50px;
-    margin: 0;
-    padding: 0;    
+    position: static; 
 }

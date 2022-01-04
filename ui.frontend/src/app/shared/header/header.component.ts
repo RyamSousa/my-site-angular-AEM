@@ -11,8 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   user: User;
-  avatarUrl: string;
-  htmlUrl: string;
+  linkedinLink: string;
+  instagramLink: string;
   editMode: boolean;
 
   constructor(private userService: ServiceUsersService) {
@@ -20,11 +20,7 @@ export class HeaderComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    try {
-      this.user = await this.userService.getUser('adobe');
-    } catch (error) {
-      alert('Usuário não encontrado.');
-    }
+    this.user = await this.userService.getUser('adobe');
   }
 
 }

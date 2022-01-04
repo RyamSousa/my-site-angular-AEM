@@ -1,19 +1,21 @@
-<header class="header" [ngClass]="{'editMode': editMode && user === undefined}">
+<header class="header" [ngClass]="{'editMode': editMode}">
     <div class="container" *ngIf="user">
         <div class="logo">
-            <img src="{{user.avatar_url ? user.avatar_url : ''}}" alt="Imagem não encontrada">
+            <a href="http://localhost:4502/content/siteangular/us/en/home.html?wcmmode=disabled">
+                <img src="{{user.avatar_url ? user.avatar_url : ''}}" alt="Imagem não encontrada">
+            </a>
         </div>
         <div class="options">
             <ul>
-                <li><a href="#informations">informations</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a [href]="['http://localhost:4502/content/siteangular/us/en/home.html?wcmmode=disabled#informations']">informations</a></li>
+                <li><a [href]="['http://localhost:4502/content/siteangular/us/en/home.html?wcmmode=disabled#portfolio']">Portfólio</a></li>
+                <li><a [href]="['http://localhost:4502/content/siteangular/us/en/home.html?wcmmode=disabled#about']">About</a></li>
             </ul>
         </div>
         <div class="socialMedia">
-            <a href="{{user.html_url ? user.html_url : ''}}" target="_blank" class="social fa fa-github"></a>
-            <a href="https://www.linkedin.com/in/ryamsousa/" target="_blank" class="social fa fa-linkedin-square"></a>
-            <a href="https://www.instagram.com/ryamsousa00/" target="_blank" class="social fa fa-instagram"></a>
+            <a [href]="[user.html_url ? user.html_url : '']" target="_blank" class="social fa fa-github"></a>
+            <a [href]="[linkedinLink ? linkedinLink : '']" target="_blank" class="social fa fa-linkedin-square"></a>
+            <a [href]="[instagramLink ? instagramLink : '']" target="_blank" class="social fa fa-instagram"></a>
         </div>
     </div>
   </header>
