@@ -21,15 +21,25 @@ export class InformationsComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.user = await this.serviceUser.getUser('adobe');
-    ServiceUsersService.emitEventRepositories.emit(this.user.login);
+    try {
+      this.user = await this.serviceUser.getUser('adobe');
+      ServiceUsersService.emitEventRepositories.emit(this.user.login);
+    } catch (error) {
+      alert('Usuário não encontrado.');
+    }
   }
 
 
   async search() {
-    this.isLoadding = true;
-    this.user = await this.serviceUser.getUser(this.username);
-    ServiceUsersService.emitEventRepositories.emit(this.user.login);
-    this.isLoadding = false;
+    try {
+      this.isLoadding = true;
+      this.user = await this.serviceUser.getUser(this.username);
+      ServiceUsersService.emitEventRepositories.emit(this.user.login);
+      this.isLoadding = false;
+    } catch (error) {
+      alert('Usuário não encontrado.');
+      this.isLoadding = false;
+    }
+
   }
 }

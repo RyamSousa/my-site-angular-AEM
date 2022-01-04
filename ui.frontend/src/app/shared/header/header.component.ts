@@ -20,7 +20,11 @@ export class HeaderComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.user = await this.userService.getUser('adobe');
+    try {
+      this.user = await this.userService.getUser('adobe');
+    } catch (error) {
+      alert('Usuário não encontrado.');
+    }
   }
 
 }

@@ -1,7 +1,6 @@
-<section id="about" class="about" [ngClass]="{'editMode': editMode}">
-    <div class="container">
-      <div class="description" [innerHtml]="text">
-      </div>
+<section id="about" class="about" [ngClass]="{'editMode': editMode && !text}">
+  <div class="container">
+    <div class="description" [innerHtml]="text | safeHtml">
     </div>
-  </section>
-  
+  </div>
+</section>

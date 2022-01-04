@@ -1,13 +1,13 @@
-<section *ngIf="repositories" id="portfolio" class="portfolio" [ngClass]="{'editMode': editMode}">
-    <h1 class="number-repos">Public repositories: {{repositories.length}}</h1>
+<section id="portfolio" class="portfolio" [ngClass]="{'editMode': editMode && repositories === undefined}">
+    <h1 *ngIf="repositories !== undefined" class="number-repos">Public repositories: {{repositories.length ? repositories.length : ''}}</h1>
     <div class="container" *ngFor="let item of repositories;">
-      <li class="card" *ngIf="!item.private">
+      <li  class="card" *ngIf="!item.private ? !item.private : true">
         <div class="card-container">
-          <h1>{{item.name}}</h1>
-          <p>{{item.description}}</p>
-          <p>Language: {{item.language}}</p>
-          <a href="{{item.svn_url}}" target="_blank">Repository address</a>
-          <span>Created at: {{item.created_at}}</span>
+          <h1>{{item.name ? item.name : ''}}</h1>
+          <p>{{item.description ? item.description : ''}}</p>
+          <p>Language: {{item.language ? item.language : ''}}</p>
+          <a href="{{item.svn_url ? item.svn_url : ''}}" target="_blank">Repository address</a>
+          <span>Created at: {{item.created_at ? item.created_at : ''}}</span>
         </div>
       </li>
     </div>

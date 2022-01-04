@@ -1,5 +1,4 @@
 import { ServiceUsersService } from 'src/app/services/service-users.service';
-import User from 'src/app/models/user.model';
 import { Utils } from '@adobe/aem-angular-editable-components';
 import { Component, OnInit } from '@angular/core';
 import Repository from 'src/app/models/repository.model';
@@ -18,9 +17,14 @@ export class PortfolioComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    await ServiceUsersService.emitEventRepositories.subscribe(
-      login => this.loadRepositories(login)
-    );
+    try {
+      await ServiceUsersService.emitEventRepositories.subscribe(
+        login => this.loadRepositories(login)
+      );
+    } catch (error) {
+      alert('Repositórios não encontrados');
+    }
+
   }
 
   async loadRepositories(login: string) {

@@ -1,3 +1,4 @@
+import { SafeHtmlPipe } from './../pipes/safe-html.pipe';
 import { ServiceUsersService } from 'src/app/services/service-users.service';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AboutComponent,
     InformationsComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    SafeHtmlPipe
   ],
   imports: [
     CommonModule,

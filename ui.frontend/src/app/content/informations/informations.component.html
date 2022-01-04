@@ -1,6 +1,6 @@
-<section id="informations" class="informations" [ngClass]="{'editMode': editMode}">
+<section id="informations" class="informations" [ngClass]="{'editMode': editMode && user === undefined}">
     <mat-progress-bar *ngIf="isLoadding" mode="indeterminate"></mat-progress-bar>
-    <div class="container">
+    <div *ngIf="user !== undefined" class="container">
       <div class="search">
         <div class="input-field col s6">
           <input id="first_name2" type="text" class="validate" [(ngModel)]="username">
@@ -10,12 +10,12 @@
       </div>
       <div class="content-central">
         <div class="content-left">
-          <h1>{{user.name}}</h1>
-          <img src="{{user.avatar_url}}" alt="Sem imagem">
+          <h1>{{user.name ? user.name : ''}}</h1>
+          <img src="{{user.avatar_url ? user.avatar_url :  ''}}" alt="Sem imagem">
         </div>
         <div class="content-right">
-            <h1>{{user.bio}}</h1>
-            <p>{{user.location}}</p>
+            <h1>{{user.bio ? user.bio : ''}}</h1>
+            <p>{{user.location ? user.location : ''}}</p>
         </div>
       </div>
     </div>

@@ -89,12 +89,9 @@ a:hover{
 }
 
 .editMode {
+    position: initial;
     display: block;
     height: 50px;
     margin: 0;
     padding: 0;    
-  }
-  
-  .editMode div {
-    display: none;
-  }
+}

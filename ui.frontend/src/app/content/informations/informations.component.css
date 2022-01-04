@@ -1,14 +1,15 @@
 .informations{
   width: 100%;
-  height: 118vh;
+  height: 48.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 8.5rem;
 }
 
 .container{
   width: 100%;
-  padding-bottom: 50px;
+  margin-bottom: 5rem;
   max-width: 80%;
   color: var(--fonts-color);
 }
@@ -129,12 +130,9 @@
 }
 
 .editMode {
-  display: block;
+  display: block;  
   height: 50px;
   margin: 0;
-  padding: 0;    
-}
-
-.editMode div {
-  display: none;
+  margin-top: 8.5rem;
+  padding: 0;
 }

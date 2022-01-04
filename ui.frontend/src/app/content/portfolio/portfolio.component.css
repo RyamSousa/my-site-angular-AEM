@@ -23,6 +23,7 @@
   .container li{
     border: 1px solid var(--primary-color);
     border-radius: 30px;
+    box-shadow: 5px 5px var(--fonts-color);
     padding: 20px;
   }
   
